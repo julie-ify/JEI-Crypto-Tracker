@@ -3,8 +3,12 @@ const FETCH_COINS = 'crypt_tracker/coins/FETCH_COINS';
 const initialState = [];
 
 export const fetchCoins = (payload) => {
-  type: FETCH_COINS, payload;
+  FETCH_COINS, payload;
 };
+
+const fetchCoinsData = () => async (dispatch) => {
+
+}
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
