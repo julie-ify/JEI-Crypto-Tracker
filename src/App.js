@@ -1,7 +1,9 @@
+import Coins from './components/coins';
+
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <Coins />
     </div>
   );
 }
