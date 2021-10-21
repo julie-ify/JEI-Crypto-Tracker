@@ -1,14 +1,20 @@
-const FETCH_COINS = 'crypt_tracker/coins/FETCH_COINS';
+const FETCH_COINS = 'crypto_tracker/coins/FETCH_COINS';
 
-const initialState = [];
-
-export const fetchCoins = (payload) => {
-  FETCH_COINS, payload;
+const initialState = {
+  coins: [],
 };
 
-const fetchCoinsData = () => async (dispatch) => {
+export const fetchCoins = (payload) => ({
+  type: FETCH_COINS,
+  payload,
+});
 
-}
+export const fetchCoinsData = () => async (dispatch) => {
+  const response = await fetch('https://api.binance.com/api/v1/ticker/24hr');
+  const result = await response.json();
+  const filter = result.filter((r) => r.symbol.includes('USDT'));
+  dispatch(fetchCoins(filter));
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

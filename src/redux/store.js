@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import coinsReduer from '../redux/reducers/coinsReducer';
+import coinsReduer from './reducers/coinsReducer';
 
 const store = createStore(coinsReduer, applyMiddleware(thunk, logger));
 
