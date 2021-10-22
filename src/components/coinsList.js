@@ -1,5 +1,6 @@
 /* eslint-disable*/
 import React from 'react';
+import numberWithCommas from '../utils/truncFunc'
 
 const CoinsList = (props) => {
   const { coins } = props;
@@ -24,8 +25,8 @@ const CoinsList = (props) => {
               <td>{coin.symbol}</td>
               <td>{coin.highPrice}</td>
               <td>{coin.lowPrice}</td>
-              <td>{coin.volume}</td>
-              <td>{coin.quoteVolume}</td>
+              <td>{numberWithCommas(coin.volume)}</td>
+              <td>{numberWithCommas(coin.quoteVolume)}</td>
               <td>{coin.priceChangePercent}%</td>
             </tr>
           ))}
