@@ -5,7 +5,7 @@ import numberWithCommas from '../utils/truncFunc'
 const CoinsList = (props) => {
   const { coins } = props;
   return (
-    <table class="table">
+    <table class="table table-striped">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -27,7 +27,7 @@ const CoinsList = (props) => {
               <td>{coin.lowPrice}</td>
               <td>{numberWithCommas(coin.volume)}</td>
               <td>{numberWithCommas(coin.quoteVolume)}</td>
-              <td>{coin.priceChangePercent}%</td>
+              <td className={coin.priceChangePercent >= 0 ? "text-success" : "text-danger"}>{coin.priceChangePercent}%</td>
             </tr>
           ))}
       </tbody>
