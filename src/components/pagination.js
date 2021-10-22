@@ -6,7 +6,6 @@ import lodash from 'lodash';
 const Pagination = (props) => {
   const { NumberOfPages, currentPage, handlePageChange } = props;
   const range = lodash.range(1, NumberOfPages + 1);
-  console.log(currentPage);
 
   return (
     <nav aria-label="Page navigation example">

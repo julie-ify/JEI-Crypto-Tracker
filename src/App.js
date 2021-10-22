@@ -8,7 +8,7 @@ function App() {
     store.dispatch(fetchCoinsData());
   });
   return (
-    <div className="App container">
+    <div className="App container-fluid">
       <Coins />
     </div>
   );

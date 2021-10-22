@@ -1,12 +1,36 @@
+/* eslint-disable*/
 import React from 'react';
-import { useSelector } from 'react-redux';
 
-const CoinsList = () => {
-  const coins = useSelector((state) => state.coins);
+const CoinsList = (props) => {
+  const { coins } = props;
   return (
-    <ul>
-      {coins && coins.map((coin) => <li key={coin.symbol}>{coin.symbol}</li>)}
-    </ul>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Symbol</th>
+          <th scope="col">24h High</th>
+          <th scope="col">24h Low</th>
+          <th scope="col">24h Vol(BTC)</th>
+          <th scope="col">24h Vol(USDT)</th>
+          <th scope="col">24h PriceChange</th>
+        </tr>
+      </thead>
+      <tbody>
+        {coins &&
+          coins.map((coin) => (
+            <tr>
+              <th scope="row">1</th>
+              <td>{coin.symbol}</td>
+              <td>{coin.highPrice}</td>
+              <td>{coin.lowPrice}</td>
+              <td>{coin.volume}</td>
+              <td>{coin.quoteVolume}</td>
+              <td>{coin.priceChangePercent}%</td>
+            </tr>
+          ))}
+      </tbody>
+    </table>
   );
 };
 
