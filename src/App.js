@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Coins from './components/coins';
 import { fetchCoinsData } from './redux/reducers/coinsReducer';
 import store from './redux/store';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import Loader from './components/loader';
 
 function App() {

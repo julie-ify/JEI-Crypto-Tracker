@@ -1,4 +1,3 @@
-/* eslint-disable*/
 import { useEffect, useState } from 'react';
 import React from 'react';
 import CoinsList from './coinsList';
