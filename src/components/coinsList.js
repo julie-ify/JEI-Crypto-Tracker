@@ -5,7 +5,7 @@ import numberWithCommas from '../utils/truncFunc'
 const CoinsList = (props) => {
   const { coins } = props;
   return (
-    <table class="table table-striped">
+    <table className="table table-striped">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -20,7 +20,7 @@ const CoinsList = (props) => {
       <tbody>
         {coins &&
           coins.map((coin) => (
-            <tr>
+            <tr key={coin.symbol}>
               <th scope="row">1</th>
               <td>{coin.symbol}</td>
               <td>{coin.highPrice}</td>
